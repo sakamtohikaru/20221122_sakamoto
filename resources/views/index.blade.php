@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>COAHTECH</title>
-  <link rel="stylesheet" href="public/css/reset.css" />
-  <link rel="stylesheet" href="public/css/style.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <div class="container">
@@ -34,14 +34,12 @@
             <th>更新</th>
             <th>削除</th>
           </tr>
-          @foreach ($todos as $todo）
           <tr>
-            <td>{{$todo->created_at}}</td>
-            <td>{{$todo->content}}</td>
+            <td>日付</td>
+            <td>タスク</td>
             <td><button class="button-update">更新</button></td>
             <td><button class="button-delete">削除</button></td>
           </tr>
-          @endforeach
         </table>
       </div>
     </div>
