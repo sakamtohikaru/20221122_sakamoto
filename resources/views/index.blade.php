@@ -20,26 +20,30 @@
           @endforeach
         </ul>
         @endif
-        <form action="/" method="post" class="add">
+        <form action="/create" method="post" class="add">
           @csrf
           <input type="text" name="content" class=add_todo>
           <input type="submit" value="追加" class=add_btn>
         </form>
-        <form action="/" method="post" class="list"></form>
         <table>
-          @csrf
           <tr>
             <th>作成日</th>
             <th>タスク名</th>
             <th>更新</th>
             <th>削除</th>
           </tr>
+          <form action="/update" method="post" class="list">
+          @csrf
+          @foreach ($todos as $todo)
           <tr>
-            <td>日付</td>
-            <td>タスク</td>
-            <td><button class="button-update">更新</button></td>
-            <td><button class="button-delete">削除</button></td>
+            <input type="hidden" name="id" value="{{$todo->id}}">
+            <td>{{$todo->created_at}}</td>
+            <td><input type="text" name="add_content" value="{{$todo->content}}"></td>
+            <td><input type="submit" value="更新" class=”button-update”></td>
+            <td><input type="submit" value="削除" class=”button-delete”></td>
           </tr>
+          @endforeach
+          </form>
         </table>
       </div>
     </div>
