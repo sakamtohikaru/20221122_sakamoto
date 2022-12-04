@@ -15,7 +15,8 @@
   border-radius: 20px;
 }
 h1{
-  font-size: 30px;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 .add{
   display: flex;
@@ -44,7 +45,14 @@ table{
 td{
   text-align: center;
 }
-.button-update{
+.add_content{
+  width: 90%;
+  font-size: 15px;
+  border: solid 1px #100e0e28;
+  border-radius: 5px;
+  padding: 5px;
+}
+.button_update{
   padding: 5px 10px;
   font-size: 15px;
   color: #e38532e3;
@@ -52,11 +60,14 @@ td{
   background-color: white;
   border-radius: 5px;
 }
-.button-delete{
+.button_delete{
   padding: 5px 10px;
   font-size: 15px;
   color: #5be332e3;
   border: solid 2px #5be332e3;
   background-color: white;
   border-radius: 5px;
+}
+tr{
+  height: 40px;
 }

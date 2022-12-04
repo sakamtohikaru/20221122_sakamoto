@@ -32,18 +32,22 @@
             <th>更新</th>
             <th>削除</th>
           </tr>
-          <form action="/update" method="post" class="list">
-          @csrf
           @foreach ($todos as $todo)
           <tr>
+          <form action="/update" method="post" >
+          @csrf
             <input type="hidden" name="id" value="{{$todo->id}}">
             <td>{{$todo->created_at}}</td>
-            <td><input type="text" name="add_content" value="{{$todo->content}}"></td>
-            <td><input type="submit" value="更新" class=”button-update”></td>
-            <td><input type="submit" value="削除" class=”button-delete”></td>
+            <td><input type="text" name="content" value="{{$todo->content}}" class="add_content"></td>
+            <td><button class="button_update">更新</button></td>
+          </form>
+          <form action="/delete" method="post" >
+          @csrf
+            <input type="hidden" name="id" value="{{$todo->id}}">
+            <td><button class="button_delete">削除</button></td>
+          </form>
           </tr>
           @endforeach
-          </form>
         </table>
       </div>
     </div>
